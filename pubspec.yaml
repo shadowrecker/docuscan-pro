@@ -1,0 +1,140 @@
+name: docuscan_pro
+description: "DocuScan Pro - The Free, All-in-One Document & PDF Platform"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.8.0 <4.0.0'
+  flutter: '>=3.32.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  # Kept on 2.x: the code base uses StateNotifier (legacy-only in 3.x).
+  flutter_riverpod: ^2.6.1
+
+  # Navigation
+  go_router: ^18.1.1
+
+  # Local Storage
+  path_provider: ^2.1.1
+
+  # PDF
+  pdfx: ^2.11.0
+  pdf: ^3.13.1
+  printing: ^5.15.1
+  syncfusion_flutter_pdfviewer: ^35.1.41
+  syncfusion_flutter_pdf: ^35.1.41
+
+  # Scanning & Camera
+  camera: ^0.12.1
+  image: ^4.12.0
+  # ML Kit Document Scanner (Android) / VisionKit (iOS): edges, perspective, multi-page.
+  flutter_doc_scanner: ^0.0.21
+
+  # OCR
+  google_mlkit_text_recognition: ^0.17.1
+
+  # QR Code
+  mobile_scanner: ^7.4.2
+
+  # Image Processing
+  image_picker: ^1.2.4
+  image_cropper: ^13.0.0
+  flutter_image_compress: ^2.1.0
+
+  # Ads
+  google_mobile_ads: ^9.1.0
+
+  # In-App Purchases
+  purchases_flutter: ^10.17.0
+
+  # Cloud / Sharing
+  share_plus: ^13.3.1
+  file_picker: ^13.1.0
+  url_launcher: ^6.2.2
+  google_sign_in: ^7.2.0
+  googleapis: ^17.0.0
+  extension_google_sign_in_as_googleapis_auth: ^3.0.0
+  flutter_web_auth_2: ^5.1.0
+  flutter_secure_storage: ^11.2.0
+  http: ^1.6.0
+
+  # UI Components
+  flutter_svg: ^2.0.9
+  cached_network_image: ^4.0.5
+  shimmer: ^4.0.0
+  lottie: ^3.0.0
+  flutter_slidable: ^4.0.3
+  reorderable_grid_view: ^2.2.8
+
+  # Utils
+  uuid: ^4.2.2
+  intl: ^0.20.3
+  # 13.x needs compileSdk 37 (AGP 9 naming); stay on 12.x until the AGP 9 migration.
+  permission_handler: ^12.0.1
+  connectivity_plus: ^7.3.2
+  mime: ^2.1.0
+  archive: ^4.5.2
+  crypto: ^3.0.3
+  csv: ^8.0.0
+  path: ^1.8.3
+
+  # Analytics
+  firebase_core: ^5.0.0
+  firebase_analytics: ^13.0.0
+  firebase_crashlytics: ^6.0.0
+
+  # Signature
+  signature: ^6.4.0
+
+  # Icons
+  cupertino_icons: ^2.0.0
+  material_design_icons_flutter: ^7.0.7296
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  xml: ^7.0.1 # tests: well-formedness of generated DOCX/XLSX parts
+  flutter_lints: ^6.0.0
+  build_runner: ^2.4.7
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true # App Store rejects icons with transparency
+  image_path: "assets/icons/app_icon.png"
+  adaptive_icon_background: "#1A73E8"
+  adaptive_icon_foreground: "assets/icons/app_icon_foreground.png"
+
+flutter:
+  uses-material-design: true
+
+  config:
+    # Plugins come from CocoaPods only. google_mlkit_* doesn't support Swift
+    # Package Manager yet; mixing the two linked Google's shared libraries
+    # (GoogleUtilities, GoogleDataTransport, FBLPromises) twice, which Apple
+    # warns causes crashes. Re-enable once ML Kit supports SPM.
+    # (SwiftyTesseract is a separate SPM dependency of the Runner target.)
+    enable-swift-package-manager: false
+
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
