@@ -98,3 +98,11 @@ Android release builds are currently signed with the debug key (`android/app/bui
 - **iOS dependencies use CocoaPods only** (`enable-swift-package-manager: false` in `pubspec.yaml`). `google_mlkit_*` has no Swift Package Manager support, and mixing the two linked Google's shared libraries twice. Firebase stopped publishing to CocoaPods after October 2026, so future Firebase upgrades depend on ML Kit gaining Swift Package Manager support.
 - `permission_handler` is pinned to 12.x: 13.x needs Android compileSdk 37, which requires Android Gradle Plugin 9.
 - Flutter warns that the UIScene app lifecycle will soon be required on iOS. That migration hasn't been done yet.
+
+## Licence
+
+Copyright © 2026 Navroop Srivastava. All rights reserved.
+
+This repository is public so the code can be viewed as a portfolio project. No licence is granted: you may not copy, modify, distribute or use the code without written permission.
+
+The bundled Poppins fonts (`assets/fonts/`) are third-party and licensed separately under the [SIL Open Font License 1.1](assets/fonts/OFL.txt).
